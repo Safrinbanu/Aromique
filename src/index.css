@@ -1,0 +1,93 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --font-sans: 'Jost', sans-serif;
+  --font-serif: 'Cormorant Garamond', serif;
+}
+@keyframes testimonialScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-testimonial-scroll {
+  animation: testimonialScroll 25s linear infinite;
+}
+.animate-scroll {
+  animation: scroll 25s linear infinite;
+}
+/* LIGHT MODE - Emerald & Champagne Theme */
+:root {
+  --background: 0 0% 100%; /* White */
+  --foreground: 165 30% 9%; /* Deep forest black */
+
+  --card: 0 0% 100%;
+  --card-foreground: 165 30% 9%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 165 30% 9%;
+
+  --primary: 162 48% 22%; /* Emerald */
+  --primary-foreground: 45 38% 96%;
+
+  --secondary: 42 35% 89%; /* Champagne */
+  --secondary-foreground: 165 30% 9%;
+
+  --muted: 42 30% 92%;
+  --muted-foreground: 165 10% 38%;
+
+  --accent: 38 55% 52%; /* Soft gold */
+  --accent-foreground: 165 30% 9%;
+
+  --destructive: 0 72% 52%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 42 22% 84%;
+  --input: 42 22% 84%;
+  --ring: 162 48% 22%;
+
+  --radius: 0.875rem; /* Softer, rounder corners */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-normal;
+  }
+}
